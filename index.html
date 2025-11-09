@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walkie Talkie WebApp</title>
+    <meta name="description" content="Real-time walkie talkie communication in your browser">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+            <h1>🎯 Walkie Talkie</h1>
+            <p>Real-time voice communication in your browser</p>
+        </header>
+
+        <main class="main">
+            <!-- Connection Section -->
+            <section id="connectionSection" class="section">
+                <div class="card">
+                    <h2>Join a Room</h2>
+                    <div class="input-group">
+                        <input 
+                            type="text" 
+                            id="roomInput" 
+                            placeholder="Enter room name" 
+                            maxlength="20"
+                        >
+                        <input 
+                            type="text" 
+                            id="usernameInput" 
+                            placeholder="Your name" 
+                            maxlength="15"
+                        >
+                    </div>
+                    <button id="joinButton" class="btn btn-primary">Join Room</button>
+                </div>
+            </section>
+
+            <!-- Room Section -->
+            <section id="roomSection" class="section hidden">
+                <div class="card">
+                    <div class="room-header">
+                        <h2>Room: <span id="roomName"></span></h2>
+                        <button id="leaveButton" class="btn btn-secondary">Leave Room</button>
+                    </div>
+                    
+                    <div class="users-list">
+                        <h3>Connected Users:</h3>
+                        <ul id="usersList"></ul>
+                    </div>
+
+                    <div class="walkie-controls">
+                        <button id="talkButton" class="talk-button">
+                            <span class="talk-icon">🎤</span>
+                            <span class="talk-text">Press to Talk</span>
+                        </button>
+                        <div id="status" class="status">Connected</div>
+                    </div>
+
+                    <div class="instructions">
+                        <p>• Hold the button to talk, release to listen</p>
+                        <p>• Make sure your microphone is enabled</p>
+                        <p>• Share the room name with others to connect</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Error Section -->
+            <div id="errorSection" class="error hidden">
+                <span id="errorMessage"></span>
+                <button onclick="hideError()" class="btn btn-secondary">Dismiss</button>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Built with WebRTC & Socket.io | Deployed on Railway & Vercel</p>
+        </footer>
+    </div>
+
+    <script type="module" src="/src/app.js"></script>
+</body>
+</html>

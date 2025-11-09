@@ -1,0 +1,14 @@
+walkie-talkie-app/
+├── backend/                 # Railway deployment
+│   ├── package.json
+│   ├── server.js
+│   └── railway.json
+├── frontend/               # Vercel deployment  
+│   ├── package.json
+│   ├── vercel.json
+│   ├── public/
+│   │   ├── index.html
+│   │   └── style.css
+│   └── src/
+│       └── app.js
+└── README.md
